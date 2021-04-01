@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog_app',
     'phonenumber_field',
     'rest_framework',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
