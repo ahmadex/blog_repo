@@ -9,3 +9,11 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
         fields = ('title','body')
+
+
+class ListSerializer(serializers.ModelSerializer):
+
+    author = serializers.StringRelatedField(read_only=True)
+    class Meta:
+        model = Blog
+        fields = "__all__"

@@ -2,6 +2,7 @@ from django.db import models
 from accounts.models import User
 from datetime import date
 from ckeditor.fields import RichTextField
+from django.template.defaultfilters import truncatechars
 # Create your models here.
 
 
@@ -18,3 +19,6 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     
+    @property
+    def short_body(self):
+        return truncatechars(self.body, 50)
