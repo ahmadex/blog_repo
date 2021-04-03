@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'blog_app',
+    'phonenumber_field',
+    'rest_framework',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -77,11 +80,16 @@ WSGI_APPLICATION = 'blog_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog_db',
+        'USER': 'ahmadex',
+        'PASSWORD': 'test123',
+        'HOST': 'localhost'
+
     }
 }
 
+AUTH_USER_MODEL = 'accounts.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
