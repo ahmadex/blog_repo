@@ -6,7 +6,6 @@ from rest_framework.validators import UniqueValidator
 
 class UserSerializer(serializers.ModelSerializer):
 
-    # password2 = serializers.CharField(style={'input-type':'password'}, write_only=True)
     email = serializers.EmailField(required=True, validators=[UniqueValidator(queryset=User.objects.all())])
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
     confirm_password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
