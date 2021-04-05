@@ -3,11 +3,11 @@
 
 {% block content %}
 
-    <h1> this is login page</h1>
 
     <h1>My Google Login Project</h1>
   {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }} !</p>
+    <p><a href='social_accounts/logout/'>Logout</a></p>
   {% else %}
     <h1>My Google Login Project</h1>
     <a href="{% provider_login_url 'google' %}">Login with Google</a>
